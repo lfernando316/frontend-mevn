@@ -1,8 +1,8 @@
 <template>
   <q-page padding>
-    <q-btn @click="userStore.access">Ingresar</q-btn>
+    <!-- <q-btn @click="userStore.access">Ingresar</q-btn>
+    <q-btn @click="userStore.logout">Cerrar sesión</q-btn> -->
     <q-btn @click="createLink">Crear Link</q-btn>
-    <q-btn @click="userStore.logout">Cerrar sesión</q-btn>
     {{ userStore.token }} - {{ userStore.expiresIn }}
   </q-page>
 </template>
