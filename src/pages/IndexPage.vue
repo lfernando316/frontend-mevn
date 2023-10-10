@@ -1,36 +1,16 @@
 <template>
   <q-page padding>
-    <!-- <q-btn @click="userStore.access">Ingresar</q-btn>
-    <q-btn @click="userStore.logout">Cerrar sesión</q-btn> -->
-    <q-btn @click="createLink">Crear Link</q-btn>
-    {{ userStore.token }} - {{ userStore.expiresIn }}
+    <q-btn @click="useLink.createLink('https://www.mercadolibre.com.co/')"
+      >Crear Link</q-btn
+    >
+    <pre>
+      {{ useLink.links }}
+    </pre>
   </q-page>
 </template>
 
 <script setup>
-import { api } from "src/boot/axios.js";
-import { useUserStore } from "../stores/user-store";
+import { useLinkStore } from "../stores/link-store";
 
-const userStore = useUserStore();
-
-userStore.refreshToken();
-
-const createLink = async () => {
-  try {
-    console.log(token.value, "Bearer token.value");
-    const res = await api({
-      method: "POST",
-      url: "/links",
-      headers: {
-        Authorization: "Bearer " + token.value,
-      },
-      data: {
-        longLink: "https://render.com/docs/static-outbound-ip-addresses",
-      },
-    });
-    console.log(res.data);
-  } catch (error) {
-    console.log(error);
-  }
-};
+const useLink = useLinkStore();
 </script>

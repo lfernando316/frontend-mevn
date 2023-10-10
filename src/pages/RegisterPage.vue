@@ -1,7 +1,7 @@
 <template>
   <q-page padding class="row justify-center">
     <div class="col-12 col-sm-6 col-md-5">
-      <h3>Register</h3>
+      <h3>Registro</h3>
       <q-form @submit.prevent="handleSubmit">
         <q-input
           v-model="email"
@@ -33,7 +33,7 @@
           ]"
         />
         <div>
-          <q-btn color="primary" label="Login" type="submit" />
+          <q-btn color="primary" label="Registrar" type="submit" />
         </div>
       </q-form>
     </div>

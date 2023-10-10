@@ -3,7 +3,7 @@ import { ref } from "vue";
 import { api } from "src/boot/axios";
 
 export const useUserStore = defineStore("user", () => {
-  const token = ref("tokenGLobal");
+  const token = ref("");
   const expiresIn = ref("");
 
   const access = async (email, password) => {
