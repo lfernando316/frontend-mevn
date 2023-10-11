@@ -20,10 +20,11 @@ export const useLinkStore = defineStore("link", () => {
           longLink,
         },
       });
-      console.log(res.data);
+      // console.log(res.data);
       links.value.push(res.data.newLink);
     } catch (error) {
-      console.log(error.response?.data || error);
+      // console.log(error.response?.data || error);
+      throw error.response?.data || error;
     }
   };
 
@@ -36,7 +37,6 @@ export const useLinkStore = defineStore("link", () => {
           Authorization: "Bearer " + userStore.token,
         },
       });
-      console.log(res.data.links);
       links.value = res.data.links.map((item) => {
         return {
           longLink: item.longLink,
