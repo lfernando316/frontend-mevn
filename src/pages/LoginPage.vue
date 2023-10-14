@@ -13,6 +13,7 @@
               /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/.test(val) ||
               'Formato Email incorrecto',
           ]"
+          lazy-rules
         />
         <q-input
           v-model="password"
@@ -22,6 +23,7 @@
             (val) =>
               (val && val.length > 5) || 'Contraseña mayor a 6 carácteres',
           ]"
+          lazy-rules
         />
         <div>
           <q-btn color="primary" label="Login" type="submit" />
