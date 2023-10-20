@@ -63,8 +63,12 @@ module.exports = configure(function (ctx) {
       // publicPath: '/',
       // analyze: true,
       env: {
-        FRONT_URI: ctx.dev ? "http://localhost:9000" : "",
-        MY_API_REST: ctx.dev ? "http://localhost:5000/api/v1" : "",
+        FRONT_URI: ctx.dev
+          ? "http://localhost:9000"
+          : "https://shortcuturl.netlify",
+        MY_API_REST: ctx.dev
+          ? "http://localhost:5000/api/v1"
+          : "ec2-3-17-15-96.us-east-2.compute.amazonaws.com/api/v1",
       },
       // rawDefine: {}
       // ignorePublicFolder: true,

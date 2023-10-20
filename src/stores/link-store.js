@@ -98,7 +98,6 @@ export const useLinkStore = defineStore("link", () => {
       links.value = links.value.map((item) =>
         item._id === newLink._id ? newLink : item
       );
-      console.log(links.vale, "links");
     } catch (error) {
       // console.log(error.response?.data || error);
       throw error.response?.data || error;
